@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-weight: 500;
+    font-size: 22px;
 }
 
 body {
@@ -54,20 +55,23 @@ main {
     height: 30%;
     border: 2px solid black;
     padding: 12px;
-    display: flex;
+    display: grid;
     justify-content: flex-end;
-    align-items: flex-end;
     text-align: right;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .current-input {
+    align-self: flex-end;
     letter-spacing: 0.9px;
-    display: flex;
-    flex-wrap: wrap;
     font-size: 22px;
     font-weight: 500;
+}
+
+.last-input {
+    align-self: flex-start;
+    justify-self: flex-end;
 }
 
 /* BTN-CONTAINER */
@@ -91,6 +95,19 @@ main {
     gap: 12px;
 }
 
+/* background-color: rgb(58, 123, 214); */
+
+button.btn-clear,
+button.btn-delete {
+    background-color: rgb(183, 55, 8);
+    font-size: 18px;
+}
+/*     background-color: rgb(29, 104, 208); */
+button.btn-clear:hover,
+button.btn-delete:hover {
+    background-color: rgb(165, 57, 18);
+}
+
 .num-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -106,11 +123,40 @@ main {
 }
 
 .btn:hover {
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(165, 165, 165);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
 }
 
 .btn:active {
     background-color: rgb(131, 129, 129);
+    height: calc(100% - 3%);
+    width: calc(100% - 3%);
+    justify-self: center;
+    align-self: center;
+}
+
+/* background-color: rgb(183, 55, 8); */
+.btn-operator {
+    background-color: rgb(42, 112, 211);
+    color: rgb(229, 229, 229);
+    border: 1px solid black;
+}
+
+/* background-color: rgb(147, 47, 11); */
+.btn-operator:hover {
+    background-color: rgb(29, 104, 208);
+}
+
+.btn-equal {
+    background-color: rgb(51, 126, 136);
+    color: white;
+    border: 1px solid black;
+}
+
+.btn-equal:hover {
+    background-color: rgb(48, 101, 108);
+    border: 1px solid black;
 }
 
 .oper-container {
